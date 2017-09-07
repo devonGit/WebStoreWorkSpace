@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <title></title>
+
+</head>
+<body>
+
+<table id="table1">
+    <thead><tr></tr></thead>
+</table>
+<script>
+    $(document).ready(function() {
+        var data ='[[{"Status":"00"}],[{"WILAYAT_DESC_ENG":"Muttrah","VILLAGE_DESC_ENG":"Mutrah"}]]';
+//var data1=$.parseJSON(data);
+var data1=JSON.parse(data);
+        var stst=data1[0]
+        console.log('The Data 1 is --'+stst[0].Status);
+
+
+    });
+
+</script>
+</body>
+<h1>MOMP WS Test</h1>
+</html>

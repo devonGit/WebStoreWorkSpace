@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/jput-2.js"></script>
+    <script>
+        var data=[{"TITLE":"Empire Burlesque","ARTIST":"Bob Dylan","COUNTRY":"USA","COMPANY":"Columbia","PRICE":"10.90","YEAR":"1985"
+            },{"TITLE":"Picture book","ARTIST":"Simply Red","COUNTRY":"EU","COMPANY":"Elektra","PRICE":"7.20","YEAR":"1985"}]
+        $(document).ready(function(){
+
+           /* var json = [{"name": "name1","score":"30"},{"name": "name2","score":"50"}];
+//while running this code the template will be appended in your div with json data
+            $("#tbody").jPut({
+                jsonData:json,
+                //ajax_url:"youfile.json",  if you want to call from a json file
+                name:"tbody_template",
+            });*/
+
+
+            var tbody = $("<tbody />"),tr;
+            $.each(data,function(_,obj) {
+                tr = $("<tr />");
+                $.each(obj,function(_,text) {
+                  /*  tr.append("<td>"+text+"</td>")*/
+                    tr.append("<td>"+obj.TITLE+"</td>")
+                      .append("<td>"+obj.ARTIST+"</td>")
+                            .append("<td>"+obj.COUNTRY+"</td>")
+                            .append("<td>"+obj.COMPANY+"</td>")
+                            .append("<td>"+obj.PRICE+"</td>")
+                });
+               /* for(i=1;i<obj.length;i++){
+
+                }*/
+                tr.appendTo(tbody);
+            });
+            tbody.appendTo("#table1");
+
+
+         /*   var transform = {"tag":"table", "children":[
+                {"tag":"tbody","children":[
+                    {"tag":"tr","children":[
+                        {"tag":"td","html":"${name}"},
+                        {"tag":"td","html":"${age}"}
+                    ]}
+                ]}
+            ]};
+
+            var data1 = [
+                {'name':'Bob','age':40},
+                {'name':'Frank','age':15},
+                {'name':'Bill','age':65},
+                {'name':'Robert','age':24}
+            ];
+
+            $('#target_div').html(json2html.transform(data1,transform));
+          */
+        });
+
+    </script>
+    <script>
+        $(document).ready(function() {
+            var tbody = $("<tbody />"), tr;
+
+            $.each(data, function (_, obj) {
+                tr = $("<tr />");
+                tr.append("<td>" + obj.TITLE + "</td>")
+                        .append("<td>" + obj.ARTIST + "</td>")
+                        .append("<td>" + obj.COUNTRY + "</td>")
+                        .append("<td>" + obj.COMPANY + "</td>")
+                        .append("<td>" + obj.PRICE + "</td>")
+                tr.appendTo(tbody);
+            });
+
+            tbody.appendTo("#table2");
+        });
+    </script>
+
+</head>
+<body>
+
+
+<table id="table1" style="border: solid 2px;">
+    <thead></thead>
+</table>
+<h1>The Data is --------   </h1>
+<div id="target_div"></div>
+<table id="table2" style="border: solid 2px;">
+    <thead></thead>
+</table>
+</body>
+</html>
