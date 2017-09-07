@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="jquery.battatech.excelexport.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $("#export_excel_button").click(function () {
+                $("#export_excel_table").btechco_excelexport({
+                    containerid: "export_excel_table"
+                    , datatype: $datatype.Table,
+                    xlSheetname:"RamKumar"
+                });
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+<div style="margin:10%;">
+
+
+    <input type="button" id="export_excel_button" class="btn btn-danger submit-button pull-right btn-xs" value="Export To Excel">
+
+    <table class="table table-bordered" id="export_excel_table">
+
+        <caption class="text-left"> <h4>  Export HTML Table Data into Excel using jQuery -SPLessons  </h4> </caption>
+
+        <tbody><tr> <th> Year </th> <th> Term </th> <th> College </th> <th> Department </th> <th> Major </th> <th> Awarded </th> <th> Unawarded </th> <th> Total Applied </th> </tr><tr><td>2013</td><td>Spring</td><td>Global</td><td>CSE</td><td>IT</td><td>11</td><td>12</td><td>23</td> </tr><tr><td>2014</td><td>Fall</td><td>Global</td><td>Electrical</td><td>ECE</td><td>23</td><td>12</td><td>35</td> </tr><tr><td>2013</td><td>Fall</td><td>JBIT</td><td>Electrical</td><td>ECE</td><td>12</td><td>98</td><td>110</td> </tr><tr><td>2010</td><td>Spring</td><td>HiTech</td><td>Computers</td><td>CS</td><td>32</td><td>15</td><td>47</td> </tr><tr><td>2011</td><td>Fall</td><td>HiTech</td><td>Computers</td><td>IT</td><td>32</td><td>64</td><td>96</td> </tr>
+        </tbody></table>
+
+
+
+</div>
+
+</body>
+</html>
