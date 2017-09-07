@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+    <style type="text/css">
+        body
+        {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div ng-app="MyApp" ng-controller="MyController">
+        <input type="button" value="Save" ng-click="Save()" />
+        <input type="button" value="Get" ng-click="Get()" />
+        <div>
+         <div>  <span> My name is ----{{user.name}}</span></div>
+           <div> <span>The Session is -{{ssn}}</span></div>
+        </div>
+        <div my-Inventory>
+        {{User.name}}
+        </div>
+
+    </div>
+
+
+    <script type="text/javascript">
+        var app = angular.module('MyApp', ["ngStorage"])
+        app.controller('MyController', function ($scope, $localStorage, $sessionStorage, $window) {
+            $scope.Save = function () {
+                $localStorage.LocalMessage = "LocalStorage: My name is Mudassar Khan.";
+                $sessionStorage.SessionMessage = "SessionStorage: My name is Mudassar Khan.";
+            }
+            $scope.Get = function () {
+
+                $window.alert($localStorage.LocalMessage + "\n" + $sessionStorage.SessionMessage);
+                 $scope.ssn= $sessionStorage.SessionMessage;
+
+            }
+
+            $scope.title = 'Space Widgets';
+            $scope.amount = 9.99;
+            $scope.visible = false;
+           // $scope.ssn= $sessionStorage.SessionMessage;
+            $scope.User={name:'Devendra kumar',Id:201};
+
+        });
+        /* app.directive('inventory',function() {
+         return {
+         scope: {},
+         link: function ($scope, $el) {
+         $scope.model = {
+         title: 'Space Widgets',
+         amount: 9.99,
+         visible: = false
+         };
+         },
+         templateUrl:'inventory.html'
+         };
+         });*/
+        app.directive('myInventory',function(){
+            return {
+                scope: {},
+                link: function ($scope, $el) {
+                    $scope.title = 'Space Widgets';
+                    $scope.amount = 9.99;
+                    $scope.visible = false;
+                    $scope.User={name:'Devendra kumar',Id:201};
+                }/*,
+                 templateUrl: 'inventory.html'*/
+            }});
+
+
+    </script>
+</body>
+</html>

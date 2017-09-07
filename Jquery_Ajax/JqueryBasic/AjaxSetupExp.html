@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#BtnChange").click(function(){
+                $.ajaxSetup({url: "demo_ajax_load.txt", success: function(result){
+                    $("div").html(result);}});
+                $.ajax();
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div><h2>Let AJAX change this text</h2></div>
+
+<button id="BtnChange">Change Content</button>
+
+</body>
+</html>

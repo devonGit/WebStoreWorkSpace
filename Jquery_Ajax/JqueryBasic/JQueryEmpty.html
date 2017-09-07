@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#emptyDiv").click(function(){
+                $("#div1").empty();
+            });
+            $("#emptytbl").click(function(){
+                $("#tblid tr:gt(0)").empty();
+            });
+           /* $("#emptSelect").click(function(){
+                $("select").empty();
+            });*/
+            $("#emptSelect").click(function(){
+                $("select option:gt(1)").remove();
+            });
+        });
+    </script>
+</head>
+<body>
+
+<div id="div1" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+
+    This is some text in the div.
+    <p>This is a paragraph in the div.</p>
+    <p>This is another paragraph in the div.</p>
+
+</div>
+<br>
+<table id="tblid" style="border: 2px solid;width: 200px;   height: 100px;">
+    <tr><td>Name</td><td>Devendra</td></tr>
+    <tr><td>Class</td><td>MCA</td></tr>
+</table>
+<select>
+    <option>Select</option>
+    <option>Delhi</option>
+    <option>Mumbai</option>
+</select>
+
+<button id="emptyDiv">Empty the div element</button>
+<button id="emptytbl">Empty the Table element</button>
+<button id="emptSelect">Empty the Select element</button>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="application/javascript">
+function selected(num){
+    var sel=document.getElementsByName('selectBox').length;
+    var sel1=document.getElementsByName('selectBox');
+
+alert('the number is -'+num);
+    console.log(Object.keys(sel1));
+    console.log(sel1);
+    var node1=sel1[0].value;
+    console.log('the select 1 value is -= '+node1);
+   // alert("The slected "+typeof(sel1));
+
+}
+
+    </script>
+</head>
+<body>
+
+
+<div>
+    <select name="selectBox">
+        <option>1</option>
+        <option>2</option>
+    </select>
+    <select name="selectBox">
+        <option>3</option>
+        <option>4</option>
+    </select>
+    <select name="selectBox">
+        <option>3</option>
+        <option>4</option>
+    </select>
+
+</div>
+<div>
+    <span id="" class="" aria-readonly=""  ></span>
+    <input size="" required>
+    <h6 id="" class="" ></h6>
+
+</div>
+<input type="button" onclick="javascript:selected(this.value)" name="Selected" value="Selected ">
+
+</body>
+</html>

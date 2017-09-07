@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        google.charts.load("current", {packages:['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        var path='';
+        function drawChart() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Element', 'Density', { role: 'style' }],
+                ['Copper', 8.94, '#b87333', ],
+                ['Silver', 10.49, 'silver'],
+                ['Gold', 19.30, 'gold'],
+                ['Platinum', 21.45, 'color: #e5e4e2' ]
+            ]);
+
+            var options = {
+                title: "Density of Precious Metals, in g/cm^3",
+                bar: {groupWidth: '95%'},
+                legend: 'none',
+            };
+
+            var chart_div = document.getElementById('chart_div');
+            var chart = new google.visualization.ColumnChart(chart_div);
+
+            // Wait for the chart to finish drawing before calling the getImageURI() method.
+            google.visualization.events.addListener(chart, 'ready', function () {
+                document.getElementById('chart_div_img').innerHTML = '<img src="' + chart.getImageURI() + ' ">';
+                console.log(chart_div.innerHTML);
+                document.getElementById('png').innerHTML = '<a href="'+chart.getImageURI()+'" download="TMS_GRAPH.jpg">Download Graph</a>';
+            });
+           // document.getElementById('png').innerHTML='<img src="' + chart.getImageURI() + '">';
+          //  document.getElementById('png').innerHTML = '<a href="'+chart.getImageURI()+'" download="TMS_GRAPH.jpg">Download Graph</a>';
+
+            chart.draw(data, options);
+
+        }
+
+    </script>
+</head>
+<body>
+
+
+<div id='chart_div' ></div>
+<div id='chart_div_img' style="display: none" ></div>
+<div id='png'></div>
+</body>
+</html>

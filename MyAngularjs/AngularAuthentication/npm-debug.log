@@ -1,0 +1,168 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\nodejs\\node.exe',
+1 verbose cli   'C:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.1
+4 verbose readDependencies loading dependencies from G:\WebStoreWorkSpace\MyAngularjs\AngularAuthentication\package.json
+5 warn package.json AngularJS_Authentication@0.0.0 No repository field.
+6 warn package.json AngularJS_Authentication@0.0.0 No README data
+7 warn package.json AngularJS_Authentication@0.0.0 No license field.
+8 verbose install where, deps [ 'G:\\WebStoreWorkSpace\\MyAngularjs\\AngularAuthentication',
+8 verbose install   [ 'express', 'jade', 'stylus', 'jwt-simple', 'underscore' ] ]
+9 verbose install where, peers [ 'G:\\WebStoreWorkSpace\\MyAngularjs\\AngularAuthentication',
+9 verbose install   [] ]
+10 verbose installManyTop reading for lifecycle G:\WebStoreWorkSpace\MyAngularjs\AngularAuthentication\package.json
+11 info preinstall AngularJS_Authentication@0.0.0
+12 verbose readDependencies loading dependencies from G:\WebStoreWorkSpace\MyAngularjs\AngularAuthentication\package.json
+13 silly cache add args [ 'jade@*', null ]
+14 verbose cache add spec jade@*
+15 silly cache add parsed spec Result {
+15 silly cache add   raw: 'jade@*',
+15 silly cache add   scope: null,
+15 silly cache add   name: 'jade',
+15 silly cache add   rawSpec: '*',
+15 silly cache add   spec: '*',
+15 silly cache add   type: 'range' }
+16 silly addNamed jade@*
+17 verbose addNamed "*" is a valid semver range for jade
+18 silly addNameRange { name: 'jade', range: '*', hasData: false }
+19 silly mapToRegistry name jade
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/jade
+23 verbose addNameRange registry:https://registry.npmjs.org/jade not in flight; fetching
+24 silly cache add args [ 'stylus@*', null ]
+25 verbose cache add spec stylus@*
+26 silly cache add parsed spec Result {
+26 silly cache add   raw: 'stylus@*',
+26 silly cache add   scope: null,
+26 silly cache add   name: 'stylus',
+26 silly cache add   rawSpec: '*',
+26 silly cache add   spec: '*',
+26 silly cache add   type: 'range' }
+27 silly addNamed stylus@*
+28 verbose addNamed "*" is a valid semver range for stylus
+29 silly addNameRange { name: 'stylus', range: '*', hasData: false }
+30 silly mapToRegistry name stylus
+31 silly mapToRegistry using default registry
+32 silly mapToRegistry registry https://registry.npmjs.org/
+33 silly mapToRegistry uri https://registry.npmjs.org/stylus
+34 verbose addNameRange registry:https://registry.npmjs.org/stylus not in flight; fetching
+35 silly cache add args [ 'jwt-simple@~0.2.0', null ]
+36 verbose cache add spec jwt-simple@~0.2.0
+37 silly cache add parsed spec Result {
+37 silly cache add   raw: 'jwt-simple@~0.2.0',
+37 silly cache add   scope: null,
+37 silly cache add   name: 'jwt-simple',
+37 silly cache add   rawSpec: '~0.2.0',
+37 silly cache add   spec: '>=0.2.0 <0.3.0',
+37 silly cache add   type: 'range' }
+38 silly addNamed jwt-simple@>=0.2.0 <0.3.0
+39 verbose addNamed ">=0.2.0 <0.3.0" is a valid semver range for jwt-simple
+40 silly addNameRange { name: 'jwt-simple', range: '>=0.2.0 <0.3.0', hasData: false }
+41 silly mapToRegistry name jwt-simple
+42 silly mapToRegistry using default registry
+43 silly mapToRegistry registry https://registry.npmjs.org/
+44 silly mapToRegistry uri https://registry.npmjs.org/jwt-simple
+45 verbose addNameRange registry:https://registry.npmjs.org/jwt-simple not in flight; fetching
+46 silly cache add args [ 'underscore@~1.6.0', null ]
+47 verbose cache add spec underscore@~1.6.0
+48 silly cache add parsed spec Result {
+48 silly cache add   raw: 'underscore@~1.6.0',
+48 silly cache add   scope: null,
+48 silly cache add   name: 'underscore',
+48 silly cache add   rawSpec: '~1.6.0',
+48 silly cache add   spec: '>=1.6.0 <1.7.0',
+48 silly cache add   type: 'range' }
+49 silly addNamed underscore@>=1.6.0 <1.7.0
+50 verbose addNamed ">=1.6.0 <1.7.0" is a valid semver range for underscore
+51 silly addNameRange { name: 'underscore', range: '>=1.6.0 <1.7.0', hasData: false }
+52 silly mapToRegistry name underscore
+53 silly mapToRegistry using default registry
+54 silly mapToRegistry registry https://registry.npmjs.org/
+55 silly mapToRegistry uri https://registry.npmjs.org/underscore
+56 verbose addNameRange registry:https://registry.npmjs.org/underscore not in flight; fetching
+57 silly cache add args [ 'express@3.4.4', null ]
+58 verbose cache add spec express@3.4.4
+59 silly cache add parsed spec Result {
+59 silly cache add   raw: 'express@3.4.4',
+59 silly cache add   scope: null,
+59 silly cache add   name: 'express',
+59 silly cache add   rawSpec: '3.4.4',
+59 silly cache add   spec: '3.4.4',
+59 silly cache add   type: 'version' }
+60 silly addNamed express@3.4.4
+61 verbose addNamed "3.4.4" is a plain semver version for express
+62 silly mapToRegistry name express
+63 silly mapToRegistry using default registry
+64 silly mapToRegistry registry https://registry.npmjs.org/
+65 silly mapToRegistry uri https://registry.npmjs.org/express
+66 verbose addNameVersion registry:https://registry.npmjs.org/express not in flight; fetching
+67 verbose request uri https://registry.npmjs.org/jade
+68 verbose request no auth needed
+69 info attempt registry request try #1 at 1:27:03 PM
+70 verbose request id 5fe4ce7487ebe71a
+71 http request GET https://registry.npmjs.org/jade
+72 verbose request uri https://registry.npmjs.org/stylus
+73 verbose request no auth needed
+74 info attempt registry request try #1 at 1:27:03 PM
+75 http request GET https://registry.npmjs.org/stylus
+76 verbose request uri https://registry.npmjs.org/jwt-simple
+77 verbose request no auth needed
+78 info attempt registry request try #1 at 1:27:03 PM
+79 http request GET https://registry.npmjs.org/jwt-simple
+80 verbose request uri https://registry.npmjs.org/underscore
+81 verbose request no auth needed
+82 info attempt registry request try #1 at 1:27:03 PM
+83 http request GET https://registry.npmjs.org/underscore
+84 verbose request uri https://registry.npmjs.org/express
+85 verbose request no auth needed
+86 info attempt registry request try #1 at 1:27:03 PM
+87 http request GET https://registry.npmjs.org/express
+88 info retry will retry, error on last attempt: Error: unable to verify the first certificate
+89 info retry will retry, error on last attempt: Error: unable to verify the first certificate
+90 info retry will retry, error on last attempt: Error: unable to verify the first certificate
+91 info retry will retry, error on last attempt: Error: unable to verify the first certificate
+92 info retry will retry, error on last attempt: Error: unable to verify the first certificate
+93 info attempt registry request try #2 at 1:27:14 PM
+94 http request GET https://registry.npmjs.org/jwt-simple
+95 info attempt registry request try #2 at 1:27:14 PM
+96 http request GET https://registry.npmjs.org/stylus
+97 info attempt registry request try #2 at 1:27:14 PM
+98 http request GET https://registry.npmjs.org/express
+99 info attempt registry request try #2 at 1:27:14 PM
+100 http request GET https://registry.npmjs.org/jade
+101 info attempt registry request try #2 at 1:27:14 PM
+102 http request GET https://registry.npmjs.org/underscore
+103 info retry will retry, error on last attempt: Error: unable to verify the first certificate
+104 info retry will retry, error on last attempt: Error: unable to verify the first certificate
+105 info retry will retry, error on last attempt: Error: unable to verify the first certificate
+106 info retry will retry, error on last attempt: Error: unable to verify the first certificate
+107 info retry will retry, error on last attempt: Error: unable to verify the first certificate
+108 info attempt registry request try #3 at 1:28:14 PM
+109 http request GET https://registry.npmjs.org/stylus
+110 info attempt registry request try #3 at 1:28:14 PM
+111 http request GET https://registry.npmjs.org/jwt-simple
+112 info attempt registry request try #3 at 1:28:14 PM
+113 http request GET https://registry.npmjs.org/express
+114 info attempt registry request try #3 at 1:28:14 PM
+115 http request GET https://registry.npmjs.org/jade
+116 info attempt registry request try #3 at 1:28:14 PM
+117 http request GET https://registry.npmjs.org/underscore
+118 verbose stack Error: unable to verify the first certificate
+118 verbose stack     at Error (native)
+118 verbose stack     at TLSSocket.<anonymous> (_tls_wrap.js:1000:38)
+118 verbose stack     at emitNone (events.js:67:13)
+118 verbose stack     at TLSSocket.emit (events.js:166:7)
+118 verbose stack     at TLSSocket._finishInit (_tls_wrap.js:567:8)
+119 verbose cwd G:\WebStoreWorkSpace\MyAngularjs\AngularAuthentication
+120 error Windows_NT 6.3.9600
+121 error argv "C:\\nodejs\\node.exe" "C:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install"
+122 error node v4.2.1
+123 error npm  v2.14.7
+124 error code UNABLE_TO_VERIFY_LEAF_SIGNATURE
+125 error unable to verify the first certificate
+126 error If you need help, you may report this error at:
+126 error     <https://github.com/npm/npm/issues>
+127 verbose exit [ 1, true ]

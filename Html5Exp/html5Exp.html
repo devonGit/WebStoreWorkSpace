@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script type="text/javascript" >
+        document.onmousedown=disableclick;
+        document.keypress=prevententer;
+        document.onmousedown=disclick;
+       status="Right Click Disabled";
+      function disableclick(event)
+        {
+            if(event.button==2)
+            {
+                alert(status);
+                return false;
+            }
+        }
+
+        function disclick(event){
+            if(event.button==0){
+                alert("Can not press Left Click");
+                return false;
+            }
+        }
+
+
+        function prevententer () {
+            if(event.keyCode == 13) {
+                alert("you are not allowed To press enter...")
+                return false;
+            }
+        }
+    </script>
+    <script language="JavaScript">
+        function click() {
+            if (event.button==1 || event.button==2) {
+                alert('No clicking!')
+            }
+        }
+        document.onMouseDown=click;
+
+    </script>
+</head>
+<body>
+<h1>Welcome To Right Click Disable page...</h1>
+</body>
+</html>

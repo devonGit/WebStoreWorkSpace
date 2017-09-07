@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to open an about:blank page in a new browser window that is 200px wide and 100px tall.</p>
+
+<button onclick="myFunction()">Try it</button>
+<button onclick="myFunction1()">New Function</button>
+<div>
+    <input type="button" value="window open" onclick="windOpen()">
+</div>
+
+<script>
+    function myFunction() {
+        var myWindow = window.open("", "", "width=200,height=100");
+    }
+function windOpen() {
+    var wintool='menubar=no, location=no, addressbar=no,scrollbars=no,resizable=0,top=150,left=180,width=1000,height=440';
+    var myWindow1 = window.open("", "MsgWindow", wintool);
+    myWindow1.document.write("<p>This is 'MsgWindow'. I am 200px wide and 100px tall!</p>");
+}
+
+    function myFunction1() {
+        window.open('/pageaddress.html', 'winname',directories=0,titlebar=0,toolbar=0,location=0,status=0,
+                menubar=0,scrollbars=no,resizable=no,
+                width=400,height=350);
+    }
+</script>
+
+</body>
+</html>

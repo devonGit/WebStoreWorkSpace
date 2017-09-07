@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var data = new Object;
+
+
+        function ReadFiles()
+        {
+            var files = document.getElementById('file').files;
+            for (var i = 0; i < files.length; i++) {
+                var reader = new FileReader();
+                reader.onloadend = function (evt) {
+                    if (evt.target.readyState == FileReader.DONE) {
+                        data["File_Content" + i] = btoa(evt.target.result);
+                       //data.push(data);
+                        console.log(data);
+                       // var filename=
+                        console.log(atob(data["File_Content" + i]));
+                    }
+                };
+                reader.readAsBinaryString(files[i]);
+            }
+        }
+        console.log(data);
+    </script>
+
+
+</head>
+<body>
+<input type="file" id="file" name="file[]" multiple />
+<button onclick="ReadFiles();">Read Files</button>
+</body>
+</html>

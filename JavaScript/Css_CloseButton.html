@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .arrow {
+            cursor: pointer;
+            color: white;
+            border: 1px solid #AEAEAE;
+            border-radius: 30px;
+            /*background: #605F61;*/
+            background: red;
+            font-size: 31px;
+            font-weight: bold;
+            display: inline-block;
+            line-height: 0px;
+            padding: 11px 3px;
+        }
+        .arrow:before{
+            content: "×";
+        }
+
+        .close-btn {
+            border: 2px solid #c2c2c2;
+            position: relative;
+            padding: 1px 5px;
+            top: -20px;
+            background-color: #605F61;
+            left: 198px;
+            border-radius: 20px;
+        }
+
+        .close-btn a {
+            font-size: 15px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <a href="#" class="arrow"></a>
+</div>
+
+<br/>
+<br/>
+<div>
+    <span class="close-btn"><a href="#">X</a></span>
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "appenders": [
+    { "type": "console", "category": "[default]" },
+    { "type": "file", "filename": "log/tmsAPI.log", "category": "tmsRoute" }
+  ]
+}

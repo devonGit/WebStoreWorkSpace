@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var data=[{"value":"0","label":"-Select-"},{"value":"1","label":"xyz"}, {"value":"2","label":"abc"}];
+            $.each(data, function () {
+                $("#country").append($("<option></option>").val(this['value']).html(this['label']));
+            });
+
+            $('#country').on('change', function() {
+                var valslt=$('#country').val();
+                var txt=$('#country').text();
+                var txt1=$("#country :selected").text();
+                alert('The value of --->'+ valslt +' and text is--'+txt1 );
+                $('#selCode').text(txt1);
+            })
+
+                });
+
+    </script>
+</head>
+<body>
+
+<div style="border: solid 2px;margin-left: 20px;height: 200px;width: 600px;">
+<select id="country" >
+
+</select>
+    <div>
+        <span style="color: red;font-weight: bold;background-color: yellow"> Selected country code is ---></span><span id="selCode"></span>
+    </div>
+</div>
+</body>
+</html>

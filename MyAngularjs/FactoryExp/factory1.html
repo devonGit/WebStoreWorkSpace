@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/angular.min.js"></script>
+    <script src="factory.js"></script>
+</head>
+<body ng-app='MainApp'>
+<div ng-controller='MainCtrl'>
+    <div>
+        <h4>Ctrl1</h4>
+        <div>{{text}}</div>
+        <input type='text' ng-model='text' />
+     <!--   <button type='button' ng-click='send();'>Send Data</button>-->
+        <button type='button' ng-click='send("Ram Kumar");'>Send Data</button>
+    </div>
+</div>
+<div ng-controller='MainCtrl2'>
+    <div>
+        <h4>Ctrl2</h4>
+        <div>{{text}}</div>
+    </div>
+</div>
+</body>
+</html>

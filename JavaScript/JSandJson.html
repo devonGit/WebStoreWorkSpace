@@ -1,0 +1,110 @@
+<html><head>
+    <title>Send HTML Form as JSON- InfoTuts</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#msg").hide();
+            $("#btn").click(function(e){
+                $("#response").slideUp("slow");
+                //alert("hi");
+                var jsonData = {};
+
+                var formData = $("#myform").serializeArray();
+                // console.log(formData);
+
+                $.each(formData, function() {
+                    if (jsonData[this.name]) {
+                        if (!jsonData[this.name].push) {
+                            jsonData[this.name] = [jsonData[this.name]];
+                        }
+                        jsonData[this.name].push(this.value || '');
+                    } else {
+                        jsonData[this.name] = this.value || '';
+                    }
+
+
+                });
+                console.log(jsonData);
+                $.ajax(
+                        {
+                            url : "action.php",
+                            type: "POST",
+                            data : jsonData,
+                            success:function(data, textStatus, jqXHR)
+                            {
+                                $("#response").text("");
+                                $("#response").append(data);
+                                $("#response").slideDown("slow");
+                            }
+                        });
+                $("#msg").show("slow");
+
+                e.preventDefault();
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div id="header">
+    Send Form's data as JSON -InfoTuts
+</div>
+
+<div id="msg" style="display: block;">
+    <p> Response From Server </p>
+    <div id="response">
+        Welcome <b>Sanjeev</b><br>Your age is: <b>23</b><br>Your gender is: <b>Male</b><br> You are : <b>Student</b><br> You Love: <b>Coding  </b></div>
+</div>
+
+<form id="myform" type="post">
+    <fieldset>
+        <legend>Ajax Form  </legend>
+        <p>We would love to hear from you. Please fill out this form</p>
+        <div class="elements">
+            <label for="name">Name :</label>
+            <input required="required" type="text" value="Sanjeev" name="fname" size="20">
+        </div>
+        <div class="elements">
+            <label for="Age">Age :</label>
+            <input required="required" type="number" value="23" id="age" name="age" size="10">
+        </div>
+        <div class="elements">
+            <label for="pro"> Profession :</label>
+            <select name="pro">
+                <option value="Student" selected="selected">Student</option>
+                <option value="Engineer">Engineer</option>
+            </select>
+        </div>
+        <div class="elements">
+            <label for="Gender">Gender: </label>
+            <input type="radio" name="gender" value="Male" checked="checked" id="r1"> Male
+            <input type="radio" name="gender" value="Female" id="r2"> Female
+        </div>
+        <div class="elements">
+            <label for="hobby">Hobby :</label>
+            <input type="checkbox" name="hobby[]" value="Sports" id="ch1"> Sports
+            <input type="checkbox" name="hobby[]" value="Coding" checked="checked" id="ch2"> Coding
+        </div>
+
+        <div class="submit">
+            <input type="submit" id="btn" name="btn" class="btn" value="Submit">
+        </div>
+	<span class="elements">Press "Ctrl + Shift + J" to see sent JSON in console: <span>
+  </span></span></fieldset>
+</form>
+<div id="myad">
+    <script type="text/javascript">
+    <!--    google_ad_client = "ca-pub-9165168790934890";
+    /* top */
+    google_ad_slot = "6414226949";
+    google_ad_width = 728;
+    google_ad_height = 90;
+    //-->
+    </script>
+    <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+    </script>
+</div>
+
+
+</body></html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+ <link rel="shortcut icon" href="website.png" type="image/png">
+
+    <title>
+       JavaScript
+    </title>
+    <script>
+        var list = [];
+
+        function getText() {
+            var str = document.getElementById("txt");
+
+            list.push(str.value);
+            str.value = "";
+            str.focus();
+            var area = document.getElementById("txtArea");
+            area.value = "";
+            for (var i = 0; i < list.length; i++) {
+                area.value += list[i] + "\n";
+            }
+        }
+    </script>
+    <script>
+        var list1=[];
+        function emp(id,name,company){
+            this.id=id;
+            this.name=name;
+            this.company=company;
+        }
+      function getEmp(){
+          var eid=document.getElementById("eid");
+          var ename=document.getElementById("ename");
+          var compname=document.getElementById("ecompname");
+          var enameObj=ename.value;
+var element=document.getElementsByTagName('input');
+          console.log(element);
+          enameObj=new emp(eid.value,ename.value,compname.value);
+          list1.push(enameObj);
+
+          eid.value="";
+          ename.value="";
+          compname.value="";
+          eid.focus();
+          var area = document.getElementById("emptxtArea");
+          var tableid=document.getElementById("empres");
+          area.value = "";
+            //tableid.getElementsByTagName('tr')=='';
+
+          for (var i = 0; i < list1.length; i++) {
+             // area.value += "Id -"+list1[i].id +", Name -"+ list1[i].name+", Company -"+list1[i].company+"\n";
+              tableid.innerHTML+= "<tr><td>"+list1[i].id +"</td><td>"+ list1[i].name+"</td><td>"+list1[i].company+"</td></tr>";
+          }
+          //tableid.deleteRow(0);
+         var lastrow=tableid.rows.length-1
+         alert(lastrow);
+      }
+        function jsonObj(){
+            var data=JSON.stringify(list1);
+            console.log(data);
+             var url = 'data:text/json;charset=utf8,' + encodeURIComponent(data);
+            window.open(url, '_blank');
+            window.focus();
+//String To JSON Object:
+            var jsonString = "{\"key\":\"value\"}";
+            var jsonObj = JSON.parse(jsonString);
+            console.log('String To JSON Obj-'+jsonObj.key);
+  //JSON obj to String Obj
+            var jsonObj = {'key':'value'};
+            console.log('JSON to String -'+JSON.stringify(jsonObj));
+        }
+ function testFunction(){
+     function MyClass(){
+         this.a = 'some value';
+         this.b = {
+             'key': 'another json structure'
+         };
+     }
+
+     var instance = new MyClass();
+     console.log(JSON.stringify(instance));
+     console.log(JSON.stringify(list1));
+ }
+     /* This is for Save Json Data to a text file...*/
+        function downloadFile() {
+            var data=JSON.stringify(list1);
+            var filename='dev.txt';
+            var pom = document.createElement('a');
+            pom.setAttribute('href', 'data:text/plain;charset=utf-8,' +encodeURIComponent(data));
+            pom.setAttribute('download',filename);
+            //pom.style.display = 'none';
+            //document.body.appendChild(pom);
+            pom.click();
+            //document.body.removeChild(pom);
+        }
+
+    </script>
+</head>
+<body>
+
+<input type="text" id="txt" />
+<br />
+<input type="button" value="Click Me" onclick="getText();" />
+<br />
+<textarea rows="5" id="txtArea"></textarea>
+
+<form>
+    Id:<input type="text" name="id" id="eid" /><br>
+    name: <input type="text" name="name" id="ename" /><br>
+   Company Name: <input type="text" name="Comp Name" id="ecompname" /><br>
+    <input type="button" onclick="javascript:getEmp();" value="Submit" /><br>
+   Results is  <textarea rows="5" id="emptxtArea" cols="40"></textarea>
+    <table id="empres" style="border: 2px groove silver;text-align: center">
+        <thead><th>ID</th><th>Name</th> <th>Company Name</th></thead>
+
+    </table>
+
+
+</form>
+<input type="button" onclick="javascript:jsonObj();" value="Json File">
+<input type="button" onclick="javascript:testFunction();" value="Test Function">
+<input type="button" onclick="javascript:downloadFile();" value="Download File">
+<div>
+
+</div>
+
+</body>
+</html>

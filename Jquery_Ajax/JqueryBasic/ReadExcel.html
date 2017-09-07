@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="button" id="btnSubmit" onclick="readdata(1,2)" value="Submit" />
+<script>
+    var xVal = 1;
+    var yVal = 2;
+
+    function readdata(x,y) {
+        x = xVal;
+        y = yVal;
+        try {
+            var excel = new ActiveXObject("Excel.Application");
+            excel.Visible = false;
+            var excel_file = excel.Workbooks.Open("D:/Devkumar.xls");// alert(excel_file.worksheets.count);
+            alert(excel_file.worksheets.count);
+            var excel_sheet = excel_file.Worksheets("Sheet1");
+
+            for (i = 0; i < 5; i++) {
+                var data = excel_sheet.Cells(i, 2).Value;
+                drawWithexcelValue(data);
+                console.log(drawWithexcelValue(data));
+            }
+
+
+        }
+        catch (ex) {
+            alert(ex);
+        }
+    }
+</script>
+</body>
+</html>

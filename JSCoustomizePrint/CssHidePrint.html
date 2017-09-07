@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        p {
+            color:#00475b;
+            font-family:Arial;
+            font-size:10pt;
+        }
+
+        a { color:#f0f; }
+
+        @media print {
+            .hideWhilePrinting { display:none; }
+            p{color: red;margin-top: 40px;}
+        }
+    </style>
+    <script>
+        document.getElementsByClassName("hidePrint").style.display="none";
+    </script>
+</head>
+<body>
+
+
+
+
+<p>
+    This is an paragraph that will demonstrate how to use CSS to remove elements
+    from displaying on the print out of this page. If you don't believe, just
+    give it a try now.
+    <a href="javascript:window.print();" class="hideWhilePrinting">
+        Print this page.
+    </a>
+</p>
+</body>
+</html>

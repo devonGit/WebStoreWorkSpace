@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<form name="form1" action="#">
+    <ul>
+        <li><input type='text' name='text1'/></li>
+        <li>&nbsp;</li>
+        <li class="submit"><input type="submit" name="submit" value="Submit" onclick="phonenumber(document.form1.text1)"/></li>
+        <li>&nbsp;</li>
+    </ul>
+</form>
+<div>
+
+    <input type="text" id="txtMB" onblur="return ValidateMobNumber('txtMB')" />
+    <!--Or Call on Button-->
+
+    <input type="submit" id="btnVal" value="Save" onclick="return ValidateMobNumber('txtMB')" />
+    <input type="text" id="txtMB1" onsubmit="return mobValidate('txtMB1')" />
+
+</div>
+<script >
+
+    function mobValidate(mob){
+        //  var val = number.value;
+        var fld = document.getElementById(mob);
+
+        console.log(fld)
+        if (/^\d{10}$/.test(fld)) {
+            // value is ok, use it
+            return true;
+        } else {
+            alert("Invalid number; must be ten digits");
+            fld.value="";
+            fld.focus();
+            return false
+        }}
+
+    function phonenumber(inputtxt)
+    {
+        var phoneno = /^\d{10}$/;
+        if(inputtxt.value.match(phoneno))
+        {
+            return true;
+        }
+        else
+        {
+            alert("message");
+            return false;
+        }
+    }
+    function IsMobileNumber(txtMobId) {
+        var mob = /^[1-9]{1}[0-9]{9}$/;
+        var txtMobile = document.getElementById(txtMB);
+        if (mob.test(txtMobile.value) == false) {
+            alert("Please enter valid mobile number.");
+            txtMobile.focus();
+            return false;
+        }
+        return true;
+    }
+</script>
+<script type="text/javascript">
+
+
+    function ValidateMobNumber(txtMobId) {
+        var fld = document.getElementById(txtMobId);
+
+        if (fld.value == "") {
+            alert("You didn't enter a phone number.");
+            fld.value = "";
+            fld.focus();
+            return false;
+        }
+        else if (isNaN(fld.value)) {
+            alert("The phone number contains illegal characters.");
+            fld.value = "";
+            fld.focus();
+            return false;
+        }
+        else if (!(fld.value.length == 10)) {
+            alert("The phone number is the wrong length. \nPlease enter 10 digit mobile no.");
+            fld.value = "";
+            fld.focus();
+            return false;
+        }
+
+    }
+
+</script>
+
+
+</body>
+</html>

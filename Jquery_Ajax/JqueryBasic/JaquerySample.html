@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <title>jQuery Traversing eq</title>
+    <style>
+        .highlight{
+            background: yellow;
+        }
+
+        .highlight1{
+            background: green;
+        }
+
+        div{
+            display: block;
+            border: 3px solid black;
+            color: black;
+            padding: 5px;
+            margin: 25px;
+            width:250px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+    <!--<script>
+
+            $( "div" ).eq( "1" ).addClass("highlight");
+            $( "div" ).eq( "-6" ).addClass("highlight1");
+
+    </script>-->
+    <script>
+        $(document).ready(function(){
+        $( "div" ).eq( "1" ).addClass("highlight");
+        $( "div" ).eq( "-6" ).addClass("highlight1");
+        });
+    </script>
+</head>
+<body>
+<h2>jQuery eq() demo</h2>
+
+<div>My index is 0, also -6 from last</div>
+<div>My index is 1, also -5 from last</div>
+<div>My index is 2, also -4 from last</div>
+<div>My index is 3, also -3 from last</div>
+<div>My index is 4, also -2 from last</div>
+<div>My index is 5, also -1 from last</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            personObj = new Object();
+            personObj.firstname = "Devendra";
+            personObj.lastname = "Kumar";
+            personObj.age = 28;
+            personObj.eyecolor = "Black";
+            console.log('The Person Type......'+typeof personObj)
+            $("button").click(function(){
+                $("div").text($.param(personObj));
+            });
+        });
+    </script>
+</head>
+<body>
+
+<button>Serialize object</button>
+
+<div></div>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<HTML dir="LTR">
+<link rel="stylesheet" type="text/css" href="/TMSJPV5.0_OMAN_DEV/css/OMANLTR.css">
+	<HEAD>
+	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	  <title>Error Page</title>
+	  <script src="/TMSJPV5.0_OMAN_DEV/js/dashboard/jquery-1.7.1.min.js"></script>
+ <script src="/TMSJPV5.0_OMAN_DEV/js/dashboard/jquery-ui-1.8.17.min.js"></script>
+		<script language="javascript1.2" src="/TMSJPV5.0_OMAN_DEV/js/Validate.js"></script>
+		<script language="javascript1.2" src="/TMSJPV5.0_OMAN_DEV/js/FormValidate.js"></script>
+		<script language="javascript">
+		function GoToDashBord1()
+		{		
+			window.top.location.href="http://omantest4:8080/TMSJPV5.0_OMAN_DEV/publicDash?CTRL_STRDIRECTION=LTR";
+		}
+		function contactPerson(){
+			var path;
+			
+				path = '/TMSJPV5.0_OMAN_DEV/DefineFAQ?callValue=pubDashLinkContent&parameter=ContactUsEng';
+			
+			window.open(path,'Search','toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=yes,copyhistory=no,width=700,height=500,left=150,top=100');
+			}
+		</script>
+        <style>
+            .tblHead1 {
+                FONT-WEIGHT: bold;
+                FONT-SIZE: 16px;
+                COLOR: #000000;
+                FONT-STYLE: normal;
+                FONT-FAMILY: Arial, Helvetica, sans-serif;
+                HEIGHT: 16px;
+                BACKGROUND-COLOR: #A1D28F;
+            }
+            .tblHead2 {
+                FONT-WEIGHT: bold;
+                text-align: center;
+                FONT-SIZE: 14px;
+                COLOR: #2b5e66;
+                FONT-STYLE: normal;
+                FONT-FAMILY: Arial, Helvetica, sans-serif;
+                HEIGHT: 14px;
+                BACKGROUND-COLOR: #C7EEC2;
+            }
+            tr {
+                display: table-row;
+                vertical-align: inherit;
+                border-color: inherit;
+            }
+
+            td, th {
+                display: table-cell;
+                vertical-align: inherit;
+            }
+            .table {
+                BACKGROUND-COLOR: #4B8F14;
+                width: 100%;
+                border-spacing: 1px;
+                align: center;
+            }
+            .tblTr2 {
+                FONT-SIZE: 14px;
+                FONT-FAMILY: Arial, Helvetica, sans-serif;
+                BACKGROUND-COLOR: #F6FFFA;
+            }
+            .tblTr {
+                FONT-SIZE: 14px;
+                FONT-FAMILY: Arial, Helvetica, sans-serif;
+                BACKGROUND-COLOR: #ffffff;
+            }
+        </style>
+		
+	</HEAD>
+<form name="errorform" method="post">
+<body onload="setVal();">
+
+
+
+<script>
+	var ctxPath="/TMSJPV5.0_OMAN_DEV";
+	var processMsg='null';
+	var popupMsg='null';
+	var ALERT_TITLE ='null';
+	var ALERT_BUTTON_TEXT ='null';;
+	
+</script>
+
+
+<br><br><br>
+<TABLE cellSpacing=1 cellPadding=1 align=center width="80%" border=0>
+<tr><td>
+<TABLE cellSpacing=1 cellPadding=1 align=center class="table" border=0>
+   <TBODY>
+	<TR class="tblHead1">
+         <TD align="center" colspan="2"><B>You are unable to access the requested page.</B> </TD>
+	</TR>
+	<TR class="tblhead2">
+         <TD align="center" colspan="2"><B>This could be caused by one of the following reasons:</B></TD>
+	</TR>
+    <TR class="tblTr2">
+         <TD valign="bottom" align=left>
+             <ul > <li type="circle"> </li>
+                 </ul>
+            </TD>
+         <TD valign="top">Your session in the client area has expired. A session will time out after 60 minutes of inactivity.</TD>
+	</TR>
+    <TR class="tblTr">
+         <TD vAlign=top align=left><ul >
+             <li type="circle"> </li>
+         </ul></TD>
+         <TD>You are attempting to access a page without signing in.</TD>
+	</TR>
+    <TR class="tblTr2">
+         <TD vAlign=top align=left><ul >
+             <li type="circle"> </li>
+         </ul></TD>
+         <TD valign="top">You are attempting to access an unauthorized area.</TD>
+	</TR>
+    <TR class="tblTr">
+         <TD vAlign=top align=left><ul >
+             <li type="circle"> </li>
+         </ul></TD>
+         <TD valign="top">Your browser version is not as per the system requirements (IE8).&nbsp;&nbsp;
+				<I><BR><BR>Internet Connection is dropped or there is delay in between the page access.</I> </TD>
+	</TR>
+    <TR class="tblTr2">
+          <TD vAlign=top align=left><ul >
+              <li type="circle"> </li>
+          </ul></TD>
+          <TD valign="top">An unexpected server problem occurred.</TD>
+	</TR>
+    <TR class="tblTr">
+          <TD colSpan=2 align="center"><B>Click here to</B>&nbsp;<A href="#" style="font-weight: bolder" onclick="javascript:GoToDashBord1();">LOGIN.</A>. </TD>
+	</TR>
+
+ </TBODY>
+</TABLE>
+</td>
+</tr>
+</TABLE>
+
+
+<input type="hidden" id="securityFlag" name="securityFlag" value="1">
+<input type="text" style="display:none" style="width:430px" id="randomno"  name="randomno" value="">
+<input type="hidden" id="encparam" name="encparam">
+<input type="hidden" id="hashval" name="hashval">
+
+
+
+
+
+</body>
+</form>
+</HTML> 
+

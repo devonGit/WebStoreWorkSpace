@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#PostClick").click(function(){
+                var txt = $("#name").val();
+                console.log(txt);
+                $.post("demo_ajax_script.js", {suggest: txt}, function(result){
+
+                    $("span").text(sugtext);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+<p>Start typing a name in the input field below:</p>
+First name:
+
+<input type="text" id="name">
+<input type="button" id="PostClick" value="Click Me For Name ">
+<p>Suggestions: <span></span></p>
+<p>The file used in this example (<a href="demo_ajax_gethint.txt" target="_blank">demo_ajax_gethint</a>) is explained in our Ajax tutorial</p>
+
+</body>
+</html>

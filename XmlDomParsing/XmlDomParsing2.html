@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            myFunction(xhttp);
+        }
+    };
+    xhttp.open("GET", "bookStore.xml", true);
+    xhttp.send();
+
+    function myFunction(xml) {
+        var arr=[];
+       // console.log('the type of arr is ='+typeof arr);
+        var xmlDoc = xml.responseXML;
+        console.log(xmlDoc);
+        document.getElementById("demo").innerHTML =
+                xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+        var xm= xmlDoc.getElementsByTagName("title");
+        var val1=xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+        var val2=xmlDoc.getElementsByTagName("title")[1].childNodes[0].nodeValue;
+        //console.log('Value 1 is --'+val1 + 'and 2 is --'+val2);
+        //console.log('The length of xm is -'+xm.length);
+     for(var x=0;x<xm.length ; x++){
+    var dev;
+   dev=xmlDoc.getElementsByTagName("title")[x].childNodes[0].nodeValue;
+    arr.push(dev);
+}
+        console.log('the json =='+JSON.stringify(arr));
+ console.log('the array is '+arr.length);
+        for(var i in arr){
+            console.log(arr[i]);
+        }
+
+
+    }
+</script>
+<script>
+    function WriteFile()
+    {
+
+        var fh = fopen("c:\\MyFile.txt", 3); // Open the file for writing
+
+        if(fh!=-1) // If the file has been successfully opened
+        {
+            var str = "Some text goes here...";
+            fwrite(fh, str); // Write the string to a file
+            fclose(fh); // Close the file
+        }
+
+    }
+
+    WriteFile();
+
+
+
+    function readfile(){
+        write("The contents of " + getCurrentFolder());
+
+        fileName = findFirstFile("*.*"); // Find the first file matching the filter
+        while(fileName.length)
+        {
+            write(fileName);
+            fileName = findNextFile();  // Find the next file matching the filter
+        }
+    }
+
+    function readfile1(){
+        fh = fopen(getScriptPath(), 0); // Open the file for reading
+        if(fh!=-1) // If the file has been successfully opened
+        {
+            length = flength(fh);         // Get the length of the file
+            str = fread(fh, length);     // Read in the entire file
+            fclose(fh);                    // Close the file
+
+// Display the contents of the file
+            write(str);
+        }
+        str = fread(fh,flength(fh)) ;
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

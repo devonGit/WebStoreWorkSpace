@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp">
+    <h4>Here is the Angular Template ....</h4>
+    <span dev-directive=""></span>
+</div>
+
+<script>
+    var app = angular.module("myApp", []);
+    app.directive("devDirective", function() {
+        return {
+            template : "I was made in a directive constructor!"
+        };
+    });
+</script>
+
+</body>
+</html>

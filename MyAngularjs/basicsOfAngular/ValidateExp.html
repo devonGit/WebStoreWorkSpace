@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/angular.min.js"></script>
+    <style>
+        input.ng-invalid {
+            background-color: lightblue;
+        }
+        input.ng-empty{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+<form ng-app="" name="myForm">
+    Enter your name:
+    <input name="myName" ng-model="myText" required>
+    <h1>Status</h1>
+    {{myForm.myName.$valid}}
+    {{myForm.myName.$dirty}}
+    {{myForm.myName.$touched}}
+</form>
+
+
+</body>
+</html>

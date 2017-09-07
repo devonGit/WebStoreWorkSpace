@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.18/angular.js"></script>
+    <script src="myapp.js"></script>
+</head>
+<body>
+
+<div ng-controller="OneController">
+    <h2>OneController</h2>
+    <button ng-click="buttonClick()">
+        buttonClick on current scope
+    </button>
+    <button ng-click="buttonClickOnTwoController()">
+        buttonClick on TwoController's scope
+    </button>
+</div>
+
+<div ng-controller="TwoController">
+    <h2>TwoController</h2>
+    <button ng-click="buttonClick()">
+        buttonClick on current scope
+    </button>
+    <button ng-click="buttonClickOnOneController()">
+        buttonClick on OneController's scope
+    </button>
+</div>
+</body>
+</html>

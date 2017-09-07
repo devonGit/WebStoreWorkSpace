@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        @media all
+        {
+            #page-one, .footer, .page-break { display:none; }
+        }
+
+        @media print
+        {
+            #page-one, .footer, .page-break
+            {
+                display: block;
+                color:red;
+                font-family:Arial;
+                font-size: 16px;
+                text-transform: uppercase;
+            }
+            .page-break
+            {
+                page-break-before:always;
+            }
+        }
+    </style>
+</head>
+<body>
+<h1 id="header123">Header Page In Print Area......</h1>
+<h2 id="page-one">unclassified</h2>
+<!-- content block -->
+<h2 class="footer">unclassified</h2>
+<h2 class="page-break">unclassified</h2>
+<!-- content block -->
+<h2 class="footer">unclassified</h2>
+<h2 class="page-break">unclassified</h2>
+<!-- content block -->
+<h2 class="footer">unclassified</h2>
+<h2 class="page-break">unclassified</h2>
+<!-- content block -->
+<h2 class="footer">unclassified</h2>
+<h2 class="page-break">unclassified</h2>
+
+</body>
+</html>

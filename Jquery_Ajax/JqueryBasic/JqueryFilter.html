@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("p").filter(".intro").css("background-color", "yellow");
+            $("p").filter("#name,#frnd").css("background-color", "red");
+            $("p:even").css({"border":"5px solid green","font-size":"20px"})
+            $("p:odd").css({"border":"5px solid gray","font-size":"16px"})
+        });
+    </script>
+   <!-- <style>
+        #name{
+            border: 2px solid green;
+            font-size: 15px;
+        }
+    </style>-->
+</head>
+<body>
+
+<h1>Welcome to My Homepage</h1>
+
+<p id="name">My name is Donald.</p>
+<p class="intro">I live in Duckburg.</p>
+<p class="intro">I love Duckburg.</p>
+<p id="frnd">My best friend is Mickey.</p>
+
+
+</body>
+</html>

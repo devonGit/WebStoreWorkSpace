@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+
+<input type="file" id="filesx" name="filesx[]" onchange="readmultifiles(this.files)" multiple="" />
+
+<script>
+    function readmultifiles(files) {
+        var ret = "";
+        var ul = document.querySelector("#bag>ul");
+        while (ul.hasChildNodes()) {
+            ul.removeChild(ul.firstChild);
+        }
+        for (var i = 0; i < files.length; i++)  //for multiple files
+        {
+            var f = files[i];
+            var name = files[i].name;
+            //alert(name);
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                // get file content
+                var text = e.target.result;
+                console.log('The Text is -'+text);
+                var li = document.createElement("li");
+                li.innerHTML = name + "____" + text;
+                ul.appendChild(li);
+            }
+            reader.readAsText(f,"UTF-8");
+        }
+    }
+</script>
+<div id="bag">
+   <ul></ul>
+</div>
+</body>
+</html>

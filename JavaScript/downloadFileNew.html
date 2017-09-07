@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        a {
+            color: #08F;
+            padding-top:80px ;
+        }
+        a:hover {
+            color: red;
+        }
+        textarea {
+            font-size: 14px;
+        }
+        #txtWrap {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            bottom: 25px;
+            border-bottom: 1px solid #DDD;
+    </style>
+    <script>
+        function main() {
+            setupDownloadLink = function(link, code) {
+                link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(code);
+            };
+            window.onload = function() {
+                txt.value = main + '';
+            }
+        }
+        main();
+    </script>
+</head>
+<body>
+<div id="txtWrap">
+    <textarea id="txt"></textarea>
+</div>
+<br>
+<a href="#" id="link" onclick="setupDownloadLink(this, txt.value)" download="code.txt">Download Above Code</a>
+</body>
+</html>

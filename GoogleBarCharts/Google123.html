@@ -1,0 +1,64 @@
+<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Year', 'Published', 'Awarded', 'Profit'],
+                ['GTB', 18482000, 40740, 200],
+                ['MAJAN', 114263470, 460, 250],
+                ['ITA', 664827460, 1120, 300],
+                ['MOHU', 103623640, 540, 350]
+            ]);
+
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,{ calc: "stringify",
+                    sourceColumn: 1,
+                    type: "string",
+                    role: "annotation" },
+                2,{ calc: "stringify",
+                    sourceColumn: 2,
+                    type: "string",
+                    role: "annotation" },3,{ calc: "stringify",
+                    sourceColumn: 3,
+                    type: "string",
+                    role: "annotation" }]);
+
+
+            var options = {
+                chart: {
+                    title: 'Company Performance',
+                    subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+                },
+                bars: 'vertical', // Required for Material Bar Charts.
+                legend: {position: 'bottom', maxLines: 3}
+            };
+
+          //  var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+            var chart = new google.visualization.ColumnChart(document.getElementById('barchart_material'));
+
+            google.visualization.events.addListener(chart, 'ready', function () {
+                document.getElementById('chart_div_img').innerHTML = '<img src="' + chart.getImageURI() + ' ">';
+                //console.log(chart_div.innerHTML);
+                document.getElementById('png').innerHTML = '<a href="'+chart.getImageURI()+'" download="TMS_GRAPH.jpg">Download Graph</a>';
+            });
+           // chart.draw(data, options);
+            chart.draw(view, options);
+        }
+    </script>
+</head>
+<body>
+<div id="barchart_material" style="width: 900px; height: 500px;"></div>
+<div id='chart_div_img' style="display: none" ></div>
+<div id='png'></div>
+<div>For Pringting the Report<input type="button" value="PrintReport" onclick="printFuction()"></div>
+
+<script>
+    function printFuction() {
+        window.print();
+    }
+</script>
+</body>
+</html>

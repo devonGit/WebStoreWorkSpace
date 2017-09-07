@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+    ?
+    function TableToExcel(tableid)
+    {
+    var id = $('[id$="' + tableid + '"]');
+    var strCopy = $('<div></div>').html(id.clone()).html(); window.clipboardData.setData("Text", strCopy);
+    var objExcel = new ActiveXObject("Excel.Application");
+    objExcel.visible = false; var objWorkbook = objExcel.Workbooks.Add; var objWorksheet = objWorkbook.Worksheets(1); objWorksheet.Paste; objExcel.visible = true;
+    }
+</script>
+
+
+</head>
+
+<body marginheight="0" marginwidth="0">
+<!--<form>
+    <input type="button" onclick="TableToExcel(myTable);" value="Create Excel Sheet" />
+</form>
+<table id="myTable" border="1">
+    <tr> <b><td>Name </td> <td>Age</td></b></tr>
+    <tr> <td>Shivani </td> <td>25</td> </tr>
+    <tr> <td>Naren </td> <td>28</td> </tr>
+    <tr> <td>Logs</td> <td>57</td> </tr>
+    <tr> <td>Kas</td> <td>54</td> </tr>
+    <tr> <td>Sent </td> <td>26</td> </tr>
+    <tr> <td>Bruce </td> <td>7</td> </tr>
+</table>-->
+
+<form id="form1" runat="server">
+    <div id="myDiv">
+        <table id='metrics'>
+            <tr>
+                <td>xyx</td>
+                <td>xyx</td>
+            </tr>
+        </table>
+        <input type="button" id="btnExport" value="Export" onclick="TableToExcel(metrics);" />
+    </div>
+    </form>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+               // $.getScript("demo_ajax_script.js");
+// This is work by Click Use Ajax to get and then, and then click Full name Button
+                $.getScript("demo_ajax_script.js",function(data){
+                    $('#devname').text(dev);
+                    $('#btnFullName').click(function(){
+                        var fn= $('#fname').val();
+                        var ln=$('#lname').val();
+                        $('#fullname').val(fullname(fn,ln));
+                });
+                });
+//This is work only The Click of Full name Button
+           /* $('#btnFullName').click(function(){
+                var fn= $('#fname').val();
+                var ln=$('#lname').val();
+                function fname(){
+                    return fn+ln;
+                }
+                console.log('The Full name is---'+fname());
+                $.getScript("demo_ajax_script.js",function(data){
+                    $('#fullname').val(fullname(fn,ln));
+        });*/
+
+        });
+            });
+    </script>
+</head>
+<body>
+
+<button>Use Ajax to get and then run a JavaScript</button>
+<div id="devname"></div>
+First Name<input type="text" id="fname"/><br>
+Last Name<input type="text" id="lname"/><br>
+<input type="button" id="btnFullName" value="Fullname"/><br>
+<input type="text" id="fullname" />
+</body>
+</html>

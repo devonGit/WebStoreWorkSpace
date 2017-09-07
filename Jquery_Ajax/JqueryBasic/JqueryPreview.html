@@ -1,0 +1,30 @@
+<html>
+<head>
+    <style>
+        #typing{background-color:#26c6da;}
+        #display{background-color:#FFEFC6;}
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+</head>
+<body>
+<div id="typing">
+    <input type="text" name="typing" value="" id="typing_input" style="height:100px;width:300px;">
+
+    </input>
+</div>
+<div id="display">
+    <p id="typing_display"></p>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+
+    $(document).ready(function()
+    {
+        $('#typing_input').bind("keypress keydown", function(event) {
+            $('#typing_display').text($('#typing_input').attr("value"));
+        });
+
+    });
+</script>
+</body>
+</html>

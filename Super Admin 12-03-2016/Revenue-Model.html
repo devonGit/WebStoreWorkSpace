@@ -1,0 +1,208 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Manage Client Account</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="resources/css/style.css" rel="stylesheet" type="text/css">
+<link href="resources/css/responsive.css" rel="stylesheet" type="text/css">
+<script src="resources/js/jquery.min.js" type="text/javascript"></script>
+
+<!--===============date & time script================-->
+<script type="text/javascript">
+var tmonth=new Array("1","2","3","4","5","6","7","8","9","10","11","12");
+
+function GetClock(){
+var d=new Date();
+var nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear();
+if(nyear<1000) nyear+=1900;
+
+var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds();
+if(nmin<=9) nmin="0"+nmin
+if(nsec<=9) nsec="0"+nsec;
+
+document.getElementById('clockbox').innerHTML=""+tmonth[nmonth]+"/"+" "+ndate+"/ "+nyear+" "+nhour+":"+nmin+":"+nsec+"";
+}
+
+window.onload=function(){
+GetClock();
+setInterval(GetClock,1000);
+}
+</script>
+
+<!--================End================-->
+<!--[if lt IE 9]>
+    <script type="text/javascript" 
+        src="http://html5shiv.googlecode.com/svn/trunk/html5.js">
+    </script>
+<![endif]-->
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#Client_License').on('change', function() {
+      if ( this.value == '4')
+      //.....................^.......
+      {
+        $("#open").show();
+      }
+      else
+      {
+        $("#open").hide();
+      }
+    });
+});
+</script>
+</head>
+<body>
+<header><!--================header start================-->
+		<input type="button" id="btnleft" value="Dashboard" />
+		<section class="top_header">
+				<div class="top_wrapper">
+						<div class="logo"><img src="resources/images/logo.png" width="85" height="80"></div>
+						<div class="admin_heading">eProc-Suite</div>
+						<div class="logout"><a href="../index.html"><img src="resources/images/logout.png" width="92" height="29" alt="Logout" title="Logout"></a> </div>
+						<div class="admin_name">Welcome Super Admin</div>
+				</div>
+		</section>
+</header><!--================header end================-->
+
+						<div class="left_part"><!--================left area start================-->
+							<div class="dashboard">
+								<nav> <a id="resp-menu" class="responsive-menu" href=""><i class="fa fa-reorder"></i> Menu</a>
+								  <ul class="menu home">
+									<li><a class="homer" href="">Dashboard</a>
+									  <ul class="sub-menu">
+										<li><a href="index.html" class="inner-dashboard">Dashboard</a></li>
+										<li><a href="manage-client-account.html">Manage Client Account</a></li>
+										
+										<li><a href="manage-user.html">Manage User</a></li>
+										<li><a href="manage-vender.html">Manage Vender</a></li>
+										<li><a href="manage-location.html">Manage Location</a></li>
+										<li><a href="manage-blog.html">Manage Blog</a></li>
+										<li><a href="manage-news.html">Manage News</a></li>
+									  </ul>
+									</li>
+								  </ul>
+								</nav>
+							 </div>
+							<div class="module_list">
+								<ul>
+									<a href="#" class="no_deco"><li class="tmc">TMC</li></a>
+									<a href="#" class="no_deco"><li class="auc">AUC</li></a>
+									<a href="#" class="no_deco"><li class="ims">IMS</li></a>
+								</ul>	
+							</div>
+					</div>
+
+
+						
+				<div class="wrapper">
+					<div class="wrapper1">
+						<div class="row bdr_btm">
+							<div class="create"> Manage Client Account </div>
+							<span class="create_icon"><a href="manage-client-account.html"><img src="resources/images/edit.png" width="26" height="26" alt="#"></a></span>
+						</div>
+					
+					
+						<div id="breadcrumb">
+							<ul class="crumbs">
+								<li><a href="index.html">Dashboard</a></li>
+								<li><a href="">Manage Client Account</a></li>
+								<li><a href="" class="last_child">Revenue Model</a></li>
+							</ul>
+						</div>
+						<div class="tabbed_panel">
+							<ul>
+								<li>Basic Information</li>
+								<li>Module Definition</li>
+								<li>Advanced privileges</li>
+								<li class="current">Revenue Model</li>
+							</ul>
+						</div>
+				
+						
+						<!--<div class="success_msg">Thank You!! Your form has been submitted successfully.</div>
+						<div class="error">Please Enter Valid E-Mail Address</div>-->
+						
+						
+						<div class="form_bg"><!--================Form start================-->
+						<div class="form_head_bg">
+							<h1>Module Definition</h1>
+						</div>
+								<div class="full">
+								<div class="half">
+										<div class="row">
+												<label for="License">Client License based on   <span class="red">*</span></label>
+												<select name="License" id="Client_License">
+														<option value="">--select--</option>
+														<option value="1">Event</option>
+														<option value="2">Users</option>
+														<option value="3">Both</option>
+														<option value="4">Open</option>
+												</select>
+										</div>
+								</div>
+								
+								<div class="half">
+									<div class="row" id="open" style="display:none;">
+										<label for="Others">License Type </label>
+										<input type="text" name="Others" placeholder="">
+									</div>
+								</div>
+							</div>
+								
+								<div class="half">
+								<div class="row">
+										<label for="VendorRegistrationCharges">Vendor Registration Charges type  <span class="red">*</span></label>
+										<select name="VendorRegistrationCharges">
+												<option>--select--</option>
+												<option>Option 1</option>
+												<option>Option 2</option>
+												<option>Option 3</option>
+										</select>
+									</div>
+									
+								</div>
+							</div>
+							<div class="row btn_row">
+										
+										<input type="submit" onclick="window.location.href='Advanced-privileges.html'" value="Back" class="btn">
+										<input type="submit" onclick="window.location.href='#'" value="Submit" class="btn">
+								</div>
+						</div>	<!--================Form end================-->	
+						
+				
+		</div> <!--================wrapper1 end================-->
+		
+</div><!--================wrapper end================-->
+
+
+<footer>	
+		<div class="copyright">
+				<div id="clockbox" class="dtime"></div>
+				<p><span class="copyright1">Copyright 2008-2015. All Rights Reserved.</span> <span class="hide">|</span> <a  href="">About Us</a> | <a  href="">Terms of use</a> | <a href="">Privacy Policy</a></p>
+		</div>
+</footer>
+
+<script src="resources/js/jquery-2.1.3.min.js"></script> 
+<script>
+$(document).ready(function(){ 
+	var touch 	= $('#resp-menu');
+	var menu 	= $('.menu');
+ 
+	$(touch).on('click', function(e) {
+		e.preventDefault();
+		menu.slideToggle();
+	});
+	
+	$(window).resize(function(){
+		var w = $(window).width();
+		if(w > 767 && menu.is(':hidden')) {
+			menu.removeAttr('style');
+		}
+	});
+	
+});
+</script>
+</body>
+</html>

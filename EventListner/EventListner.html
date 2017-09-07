@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        window.onload = function () {
+            var txt = document.getElementById("fnm");
+            var tbtn = document.getElementById("tval");
+            tbtn.addEventListener("click", function (e) {
+                alert('The value of input box is -' + txt.value);
+               // txt.value="";
+            });
+
+            var filesobj = document.getElementById("file");
+            filesobj.addEventListener("change",function(e){
+                var fillent=filesobj.files;
+                for(var i=0;i<fillent.length;i++){
+                    console.log('The Total number of Files is -'+fillent.length);
+                    var f = fillent[i];
+                    var name = fillent[i].name;
+                    var reader = new FileReader();
+                    reader.addEventListener("load",function(event){
+                        var data=event.target;
+                        console.log(data);
+                        console.log('The Filename is -'+name+' and Content is -> '+data.result);
+                    });
+                    reader.readAsText(f,'UTF-8');
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+
+<input type="file" id="file" name="file[]" multiple />
+
+<input type="text" name="fname" id="fnm">
+<input type="button" value="Onclick" id="tval">
+
+</body>
+</html>

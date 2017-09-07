@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="" ng-init="points=[1,15,19,2,40]">
+   <p>The result is - {{points}}</p>
+    <p>The 3 result is - {{points[2]}}</p>
+    <p ng-repeat="arr in points">The third result is {{ arr }}</p>
+
+</div>
+
+</body>
+</html>

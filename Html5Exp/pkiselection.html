@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .divRow
+        {
+            display:table-row;
+            width:auto;
+        }
+
+        .divCell
+        {
+            float:left;/*fix for  buggy browsers*/
+            display:table-column;
+            width:200px;
+            background-color:#ccc;
+        }
+    </style>
+</head>
+<body>
+
+<div style="border: 2px solid black">
+    <div class="divRow"> PKI IDP selection</div>
+    <div class="divrow" id="divpkiidp" style="width: 50%; float: left"><input type="radio" name="pki" id="pkiidp">PKI IDP</div>
+    <div class="divrow" style="width: 50%; float: left"><input type="radio" name="pki" id="pkimobile"> Mobile PKI</div>
+    <div id="mobpki" style="display: none" class="divrow">
+      Plese Enter Mob- <input type="text" name="mobnumber">
+    </div>
+
+
+</div>
+
+<script>
+    var mobpkiradio= document.getElementById('pkimobile');
+    var pkiidpradio = document.getElementById('pkiidp');
+    var mobtext = document.getElementById('mobpki');
+    var divpkiidp = document.getElementById('divpkiidp');
+    pkiidpradio.onclick=function(){
+        mobtext.style.display='none';
+    }
+    mobpkiradio.onclick=function(){
+        mobtext.style.display='';
+      //  divpkiidp.style.display='none';
+
+    }
+
+</script>
+
+</body>
+</html>

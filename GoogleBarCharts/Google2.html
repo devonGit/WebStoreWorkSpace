@@ -1,0 +1,51 @@
+<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {packages:['corechart']});
+        google.charts.setOnLoadCallback(drawStuff);
+        function drawStuff() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Country');
+            data.addColumn('number', 'GDP');
+            data.addRows([
+                ['US', 16768100],
+                ['China', 9181204],
+                ['Japan', 4898532],
+                ['Germany', 3730261],
+                ['France', 2678455]
+            ]);
+
+            var options = {
+                title: 'GDP of selected countries, in US $millions',
+                width: 500,
+                height: 300,
+                legend: {position: 'bottom', maxLines: 3},
+                bar: {groupWidth: '95%'},
+                vAxis: { gridlines: { count: 6 } },
+
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('number_format_chart'));
+            chart.draw(data, options);
+
+            document.getElementById('format-select').onchange = function() {
+                options['vAxis']['format'] = this.value;
+                chart.draw(data, options);
+            };
+        };
+    </script>
+</head>
+<body>
+<select id="format-select">
+    <option value="">none</option>
+    <option value="decimal" selected>decimal</option>
+    <option value="scientific">scientific</option>
+    <option value="percent">percent</option>
+    <option value="currency">currency</option>
+    <option value="short">short</option>
+    <option value="long">long</option>
+</select>
+<div id="number_format_chart">
+</body>
+</html>

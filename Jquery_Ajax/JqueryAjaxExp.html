@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $.ajax({url: "dev.txt",
+                    success: function(result){
+                    $("#div1").html(result);
+                }});
+            });
+        });
+    </script>
+    <script>
+        var element = $("#myElement"),
+                attributes = {};
+
+        $.each(element.get(0).attributes, function(i, attrib){
+            attributes[attrib.name] = attrib.value;
+        });
+    </script>
+</head>
+<body>
+<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+<button>Get External Content</button>
+<item id="item1" name="the first item" image="thumbnail1.png" />
+</body>
+</html>

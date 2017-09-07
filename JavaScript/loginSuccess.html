@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script >
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        window.onload= function getname(){
+            var nm=getUrlVars()['name'];
+            console.log(nm);
+            document.getElementById('name').innerHTML=nm;
+        }
+
+        function delayedAlert() {
+            timeoutID = window.setTimeout(alert('This is PopUp After 2 min!!!'), 2000);
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+
+<div>Welcome <span id="name"></span></div>
+
+<input type="button" name="click" value="Click me" onclick="delayedAlert()">
+
+</body>
+</html>

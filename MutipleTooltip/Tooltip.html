@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<div>
+    <select id="tldtip" onclick="tooltip();" size="3" name="selectionField" multiple='multiple'>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+    </select>
+</div>
+<script>
+    var selectvalue=[];
+function tooltip(){
+/*var option=document.getElementById('tldtip').offsetParent*/
+    var options = document.getElementById('tldtip').options;
+    var dev=options.selectedIndex;
+    console.log('the array of dev---'+dev);
+
+    selectvalue.push(options[dev].value);
+    var letsel=selectvalue.length;
+    console.log('the array of option---'+selectvalue);
+   // console.log('the array of option---'+letsel);
+
+
+
+    var values = [];
+    var i = 0, len = options.length;
+
+    while (i < len)
+    {
+        values.push(options[i++].value);
+    }
+  //  alert(values.join(', '));
+}
+</script>
+</body>
+</html>

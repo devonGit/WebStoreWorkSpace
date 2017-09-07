@@ -1,0 +1,78 @@
+<html>
+<head>
+    <script language="javascript">
+        function WriteToFile()
+        {
+            var textToWrite = document.getElementById("textbox").value;
+            var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
+//            var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
+            var fileNameToSaveAs = 'Devtext.txt';
+
+
+            var downloadLink = document.createElement("a");
+            downloadLink.download = fileNameToSaveAs;
+            downloadLink.innerHTML = "Download File";
+            if (window.webkitURL != null)
+            {
+                // Chrome allows the link to be clicked
+                // without actually adding it to the DOM.
+                downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+            }
+            else
+            {
+                // Firefox requires the link to be added to the DOM
+                // before it can be clicked.
+                downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+                downloadLink.onclick = destroyClickedElement;
+                downloadLink.style.display = "none";
+                document.body.appendChild(downloadLink);
+            }
+
+            downloadLink.click();
+        }
+
+        function destroyClickedElement(event)
+        {
+            document.body.removeChild(event.target);
+        }
+        function createText(){
+            (function () {
+                var textFile = null,
+                        makeTextFile = function (text) {
+                            var data = new Blob([text], {type: 'text/plain'});
+
+                            // If we are replacing a previously generated file we need to
+                            // manually revoke the object URL to avoid memory leaks.
+                            if (textFile !== null) {
+                                window.URL.revokeObjectURL(textFile);
+                            }
+
+                            textFile = window.URL.createObjectURL(data);
+
+                            return textFile;
+                        };
+
+
+                var create = document.getElementById('create'),
+                        textbox = document.getElementById('textbox');
+
+                create.addEventListener('click', function () {
+                    var link = document.getElementById('downloadlink');
+                    link.href = makeTextFile(textbox.value);
+                    link.style.display = 'block';
+                }, false);
+            })();
+
+       }
+
+    </script>
+</head>
+<body >
+
+
+<textarea id="textbox">Type something here</textarea>
+<button id="create" onclick="WriteToFile()">Create file</button>
+<a download="info.txt" id="downloadlink" style="display: none">Download</a>
+
+</body>
+</html>

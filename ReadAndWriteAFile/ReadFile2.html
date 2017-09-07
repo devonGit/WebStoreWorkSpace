@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #filecontents {
+            border:double;
+            overflow-y:scroll;
+            height:400px;
+        }
+    </style>
+    <script>
+
+        window.onload = function () {
+            //Check the support for the File API support
+            if (window.File && window.FileReader && window.FileList && window.Blob) {
+                var fileSelected = document.getElementById('txtfiletoread');
+                var fileContents = document.getElementById('filecontents');
+                fileSelected.addEventListener('change', function (e) {
+                    //Set the extension for the file
+                    var fileExtension = /text.*/;
+                    //Get the file object
+                    console.log("The list of files is -"+fileSelected.files.length);
+
+                    var fileTobeRead=null;
+                    for( var i=0;i<fileSelected.files.length;i++){
+
+                         fileTobeRead = fileSelected.files[i];
+                        //Check of the extension match
+                        if (fileTobeRead.type.match(fileExtension)) {
+                            //Initialize the FileReader object to read the 2file
+
+                            var fileReader = new FileReader();
+                            var fname=fileTobeRead.name;
+                            console.log('The Filename  is- -'+fileTobeRead.name);
+                            fileReader.addEventListener('load', function (e) {
+
+                              //  var fileContents = document.getElementById('filecontents');
+                                var va= e.target;
+
+                                var div = document.createElement("div");
+                                div.innerText = 'The Contents Of File -'+fname+'->>>>'+va.result;
+                                fileContents.insertBefore(div,null);
+                               console.log('The Read Result is - '+va.result);
+                                fname.value='';
+                            });
+                            fileReader.readAsText(fileTobeRead);
+
+                            /*console.log(fileReader);*/
+                        }
+                        else {
+                            alert("Please select text file");
+                        }
+                    }
+
+                }, false);
+            }
+            else {
+                alert("Files are not supported");
+            }
+        }
+    </script>
+</head>
+<body>
+
+<body>
+Please Select text file of which contents are to be read:
+<input type="file" id="txtfiletoread" multiple="multiple" />
+<div>The File Contents are as below:</div>
+<div id="filecontents"></div>
+</div>
+</body>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#btn').click(function(){
+            var name=$("#name").val();
+            $('#nm').text(name);
+            });
+        });
+        $(document).ready(function(){
+            $('#typing_input').bind("keypress keydown", function(event) {
+                $('#typing_display').text($('#typing_input').attr("value"));
+            });
+
+        });
+    </script>
+    <style>
+        #display{
+            background-color: #03a9f4;
+            color: #444444;
+            font-style: italic;
+            font-size: xx-large;
+        }
+        table{
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+
+<div>
+    <table >
+        <tr><td>Name</td><td><input type="text" id="name"></td></tr>
+        <tr><td>Address</td><td><input type="text" id="address"></td></tr>
+        <tr><td><input type="button" id="btn" value="Submit"></td></tr>
+    </table>
+
+</div>
+<div>
+    <p id="nm"></p>
+</div>
+<div id="typing">
+    <input type="text" name="typing" value="" id="typing_input" style="height:100px;width:300px;">
+
+    </input>
+</div>
+<div id="display">
+    <p id="typing_display"></p>
+</div>
+
+</body>
+</html>

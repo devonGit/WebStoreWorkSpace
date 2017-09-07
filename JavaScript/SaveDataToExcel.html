@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+    <TITLE> New Document </TITLE>
+    <META NAME="Generator" CONTENT="EditPlus">
+    <META NAME="Author" CONTENT="">
+    <META NAME="Keywords" CONTENT="">
+    <META NAME="Description" CONTENT="">
+</HEAD>
+
+<SCRIPT LANGUAGE=JAVASCRIPT>
+    var currentDate = new Date();
+    var date1 = currentDate.getDate();
+    var mon = currentDate.getMonth()+1;
+    var year = currentDate.getYear();
+    var today = date1+"/"+mon+"/"+year;
+    var filePath = "C:\\Users\\devendra.kumar\\Desktop\\SaveDataToExcel.xlsx";
+    function setDate()
+    {
+        f1.tDate.value=today;
+    }
+
+    function exportF() {
+        //Format your table with form data
+        document.getElementById("input1").innerHTML = document.getElementById("name").value;
+        document.getElementById("input2").innerHTML = document.getElementById("companyName").value;
+        document.getElementById("input3").innerHTML = document.getElementById("address").value;
+
+        var table= document.getElementById("table");
+        var html = table.outerHTML;
+
+        var url='data:application/vnd.ms-excel,' + escape(html) ; // Set your html table into url
+        var link = document.getElementById("downloadLink");
+        link.setAttribute("href", url);
+        link.setAttribute("download", "export.xls"); // Choose the file name
+        link.click(); // Download your excel file
+        return false;
+    }
+
+
+</SCRIPT>
+<BODY onLoad='setDate();'>
+<form onsubmit="return exportF()">
+    <input id="name" type="text"/><br>
+    company name<input type="text" id="companyName" /><br>
+    Address<input type="text" id="address" /><br>
+
+    <input type="submit"/>
+</form>
+
+<table id="table" style="display: none">
+    <thead><th>name</th><th>Company name</th><th>Addresss</th></thead>
+    <tr>
+        <td id="input1"></td><td id="input2"></td><td id="input3"></td>
+    </tr>
+</table>
+
+
+<a style="display: none" id="downloadLink"></a>
+</BODY>
+</HTML>

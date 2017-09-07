@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #fixed-div {
+            position: fixed;
+            width: 30%;
+            margin-top:290px;
+            padding-top:20px;
+            padding-bottom: 20px; /* must be same height as the footer */
+            background-color: rgba(255, 255, 255, 0.60);
+            min-height: 100%;
+            /*overflow: hidden;*/
+        }
+
+        #absolute-div {
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.60);
+            margin-bottom: 10px;
+            position: relative;
+            height: 200px;
+        }
+        #footer {
+            position: relative;
+            margin-top: -33px; /* negative value of footer height */
+            height: 20px;
+            line-height: 33px;
+            border-bottom:20px solid #fff;
+            text-align: left;
+            background-color:#fff;
+            padding-left:10px;
+        }
+        #map_canvas { /* background */
+            clear:left;
+            float: left;
+            width: 100%;
+            min-height: 100%;
+            z-index:-1001;
+            /* height: 530px;*/
+            -webkit-box-shadow: 0px 0px 10px #888;
+            -moz-box-shadow: 0px 0px 10px #888;
+        }
+        #results {
+            height: 100%;
+            overflow-y: scroll; /* adds scrollbar */
+        }
+    </style>
+</head>
+<body>
+<div id="searchbox">
+
+    <div id="absolute-div" class="clear-block">
+
+
+        <form method="post" action="./index.php" accept-charset="UTF-8" method="post" id="clinic-finder-form" class="clear-block" class="clear-block">
+
+
+            <label for="edit-gmap-address">Standort angeben und Vorteile in der Umgebung finden: </label>
+            <input type="text" maxlength="128" name="address" id="address" size="60" value="" class="form-text" autocomplete="off" />
+           <!-- <?php
+                            // support unicode
+                            mysql_query("SET NAMES utf8");
+                            $cats = $db->get_rows("SELECT categories.* FROM categories WHERE categories.id!='' ORDER BY categories.cat_name ASC");
+
+            ?>
+-->
+
+            <select name="products" class="form-select" id="edit-products" ><option value="">Alle Kategorien</option>
+                <!--<?php if(!empty($cats)): ?>
+                <?php foreach($cats as $k=>$v): ?>
+                <option value="<?php echo $v['id']; ?>"><?php echo $v['cat_name']; ?></option>
+                <?php endforeach; ?>
+                <?php endif; ?>-->
+
+                <option>dev</option>
+                <option>Ram</option>
+               <option>Shyam</option>
+                <option>Pr3em</option>
+                <option>Kumar</option>
+            </select>
+
+
+            <input type="submit" name="op" id="edit-submit" value="Vorteile finden" class="btn btn-primary" />
+            <input type="hidden" name="form_build_id" id="form-0168068fce35cf80f346d6c1dbd7344e" value="form-0168068fce35cf80f346d6c1dbd7344e"  />
+            <input type="hidden" name="form_id" id="edit-clinic-finder-form" value="clinic_finder_form"  />
+
+            <input type="button" name="op" onclick="document.location.href='newstore.php'" id="edit-submit" value="Unternehmen vorschlagen" class="btn btn-primary" />
+
+
+        </form>
+
+    </div></div>
+<div id="fixed-div">
+    <div id="clinic-finder" class="clear-block">
+        <div id="results">
+
+
+            <ol style="display: block; " id="list">1</ol>
+        </div>
+    </div>
+
+</div>
+
+<div id="map_canvas"></div>
+<div id="footer">&copy; 2008-2013 Ihr Vorteilsclub - Impressum</div>
+</body>
+</html>

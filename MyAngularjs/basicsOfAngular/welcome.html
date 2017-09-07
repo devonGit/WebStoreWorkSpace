@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="devapp" ng-controller="devctrl">
+
+    <p>Data : {{content}}</p>
+    <p>Status : {{statuscode}}</p>
+    <p>StatusText : {{statustext}}</p>
+
+</div>
+
+<script>
+
+
+    var app = angular.module('devapp', []);
+    app.controller('devctrl', function($scope, $http) {
+        $http.get("welcome.html")
+                .then(function(response) {
+                    $scope.content = response.data;
+                    $scope.statuscode = response.status;
+                    $scope.statustext = response.statusText;
+                });
+    });
+</script>
+
+
+</body>
+</html>

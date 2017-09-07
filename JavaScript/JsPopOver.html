@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>javscript tooltip</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+    <style type="text/css">
+        <!--
+        #container {
+            width:700px;
+            margin:auto;
+        }
+        #tooltip {
+            position:relative;
+            font-family:arial,sans-serif;
+            font-size:10px;
+            color:#000;
+            padding:3px;
+            border:1px solid #000;
+            background-color:#ffe;
+        }
+        input {
+            width:100px;
+            margin:5px;
+        }
+        -->
+    </style>
+
+    <script type="text/javascript">
+        <!--
+        function showFullContent(inp,n,t) {
+            obj=document.getElementById('container');
+            val=document.forms[0][n].value
+            spn=document.createElement('span');
+            spn.setAttribute('id','tooltip');
+            spn.style.top=t+'px';
+            con=document.createTextNode(val);
+            spn.appendChild(con);
+            obj.appendChild(spn);
+
+            inp.onmouseout=function() {
+                obj.removeChild(spn);
+            }
+        }
+        //-->
+    </script>
+
+</head>
+<body>
+
+<form action="#">
+
+    <div id="container">
+        <input type="text" name="one" value="123456780ABCDEFGHIJKLMNLOPQRSTUVWXYX" onmouseover="showFullContent(this,0,-70)"><br />
+        <input type="text" name="two" value="this is another input type equals text and has a very large value!!" onmouseover="showFullContent(this,1,-38)"><br />
+        <input type="text" name="three" value="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin massa. Nam vehicula." onmouseover="showFullContent(this,2,-6)">
+    </div>
+
+</form>
+
+</body>
+</html>

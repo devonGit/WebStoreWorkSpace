@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="imagesloaded.pkgd.min.js"></script>
+    <!-- or -->
+    <script src="imagesloaded.pkgd.js"></script>
+
+   <link href="imgLoadCss.css" type="text/css">
+    <script type="text/javascript" src="imgLoad.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#add').click(function(){
+                var dev=$('#add').text();
+                console.log(dev);
+            });
+
+
+        });
+
+    </script>
+</head>
+<body>
+<h1>imagesLoaded, progress with jQuery</h1>
+
+<div class="buttons">
+    <button id="add">Add images</button>
+    <button id="reset">Reset</button>
+</div>
+<div id="status">
+    <progress max="7" value="0"></progress>
+</div>
+<div id="image-container"></div>
+<div>
+<img src="//lorempixel.com/265/249/?455" />
+</div>
+
+</body>
+</html>
