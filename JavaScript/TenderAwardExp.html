@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var tbody = $("<tbody />");
+           var anc= $("<a />");
+            var tr=$("<tr />");
+            var td=$("<td />");
+            var dic1=$("<div />");
+            var span=$("<span />");
+            var span3=$("<span />");
+            var span2=$("<span />");
+            var devdat="I am Devendra ";
+            var name="Devendra";
+            var classnm="MCA";
+            dic1.append(td.html(anc));
+            var fun="javascript:dev('"+name+"','"+classnm+"');";
+             var no=-10;
+            anc.text(devdat);
+            anc.attr("onclick",fun);
+            anc.attr("href","#");
+
+            span.html(removenegative(no))
+            dic1.append(span)
+
+            td.append("<td style='text-align: center;'>Name</td>")
+                    .append("<td style='text-align: center;'>class</td>")
+                    .append("<td style='text-align: center;'>"+ removenegative1(no)+"</td>")
+                    .append("<td style='text-align: center;'>MIS Award Detail</td>")
+
+            tr.appendTo(tbody);
+            tbody.appendTo("#table1");
+           // tr.append("<td> </td>").appendChild(anc);
+           // $('#additem').html(anc).appendChild(dic1);
+           $('#additem').html(dic1);
+
+            span3.text('I m dev....');
+           $('#devid').html(span3);
+        });
+
+        function dev(obj1,obj2){
+            alert('The Name is -->'+obj1+' and class is ---'+obj2 );
+        }
+
+        function removenegative(num){
+            var span1=$("<span />");
+            var txt='';
+            if(num>=0){
+                span1.html(num)
+                span1.attr("style","color: green;");
+                txt=span1;
+                return txt;
+            }else{
+                var num1=Math.abs(num);
+                span1.html(num1)
+                span1.attr("style","color: red;");
+                txt=span1;
+                return txt;
+
+            }
+        }
+        function removenegative1(num){
+            return "<span style='color: red'>"+num+"</span>";
+        }
+    </script>
+
+</head>
+<body>
+
+<div id="additem">
+
+</div>
+<div>
+    name <span style="color: red">Devendra Kumar</span>
+    <table id="table1" class="display" >
+
+    </table>
+</div>
+<div id="devid">
+    <label>There is one addition --->>></label>
+
+
+</div>
+
+</body>
+</html>
